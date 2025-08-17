@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif; 
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3)), 
+    url(/card-slider/img/fondo.jpg) no-repeat center / cover; 
+    
+}
+
+
+
+.listado-tarjetas .tarjeta-individual {
+    color: white;
+    background: rgba(255, 255, 255, 0.3);
+    width: 400px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(30px);
+}
+
+.listado-tarjetas .tarjeta-individual .imagen-individual {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    border: 2px solid white;
+    padding: 6px;
+}
+
+.listado-tarjetas .tarjeta-individual .descripcion-individual {
+    font: 500 1.15rem "Montserrat, san-serife";
+    color: white;
+    margin: 14px 0 40px;
+}
+
+.listado-tarjetas .tarjeta-individual .boton-empezar {
+    font-size: 1.25rem;
+    padding: 10px 35px;
+    color: black;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+.listado-tarjetas .tarjeta-individual .boton-empezar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    color: #fff;
+}
