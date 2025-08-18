@@ -18,6 +18,17 @@ body {
     
 }
 
+.listado-tarjetas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    width: 100vw;
+    padding: 0px 10px;
+    flex-wrap: wrap;
+}
+
+
 
 
 .listado-tarjetas .tarjeta-individual {
