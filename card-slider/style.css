@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif; 
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -13,28 +13,50 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3)), 
-    url(/card-slider/img/fondo.jpg) no-repeat center / cover; 
-    
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), /* Corregido */
+    url(/card-slider/img/fondo.jpg) no-repeat center / cover;
+}
+
+.contenedor-general {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    max-width: 500px;
+    width: 100%; /* Espacio para los botones */
 }
 
 .listado-tarjetas {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     gap: 10px;
-    width: 100vw;
-    padding: 0px 10px;
-    flex-wrap: wrap;
+    padding: 20px;
+    /* Propiedades clave para el slider */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* Ocultar la barra de scroll */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-left: 20px;
 }
 
-
-
+.listado-tarjetas::-webkit-scrollbar {
+    display: none;
+}
 
 .listado-tarjetas .tarjeta-individual {
+    flex: 0 0 300px; /* Ancho fijo para las tarjetas */
+    scroll-snap-align: start; /* Alineación del scroll */
     color: white;
     background: rgba(255, 255, 255, 0.3);
-    width: 400px;
     padding: 35px;
     display: flex;
     flex-direction: column;
@@ -43,6 +65,8 @@ body {
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(30px);
+    height: 600px;
+    min-width: 400px;
 }
 
 .listado-tarjetas .tarjeta-individual .imagen-individual {
@@ -76,4 +100,50 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid #fff;
     color: #fff;
+}
+
+.boton-navegacion {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#boton-izquierdo {
+    left: -20px; /* Corregido */
+}
+
+#boton-derecho {
+    right: -20px;
+}
+
+.puntos-navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 40px;
+}
+
+.punto-indicador {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Corregido */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Corregido */
+}
+
+.punto-indicador.activo {
+    background-color: white; /* Corregido */
 }

@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Card Slider</title>
 </head>
 <body>
     <div class="contenedor-general">
         <div class="contenedor-slider">
+            <button id="boton-izquierdo" class="boton-navegacion"><i class="fa-solid fa-angle-left"></i></button>
             <div class="listado-tarjetas">
                 <div class="tarjeta-individual">
                     <img src="/card-slider/img/seccion-montana1.jpg" alt="Montaña 1" class="imagen-individual">
@@ -44,10 +46,11 @@
                     <p class="descripcion-individual">Mejora tu VPM</p>
                     <button class="boton-empezar">Empezar</button>
                 </div>
-
-                
             </div>
+            <button id="boton-derecho" class="boton-navegacion"><i class="fa-solid fa-angle-right"></i></button>
         </div>
+        <div class="puntos-navegacion"></div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
